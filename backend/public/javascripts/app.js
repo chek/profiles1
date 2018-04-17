@@ -6,14 +6,10 @@ var App = {
         App.appContainer = document.getElementById("container");
         var xhReq = new XMLHttpRequest();
         xhReq.onreadystatechange = function() {
-            if (xhReq.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+            if (xhReq.readyState == XMLHttpRequest.DONE) {
                 if (xhReq.status == 200) {
                     App.workers = JSON.parse(xhReq.responseText);
                     App.renderList();
-                }
-                else if (xhReq.status == 400) {
-                }
-                else {
                 }
             }
         };
@@ -29,7 +25,7 @@ var App = {
         App.currentWorker = App.workers.find(function(worker) {
             return worker.id === id;            
         });   
-        App.renderInfo()         ;
+        App.renderInfo();
     },
     backToList: function() {    
         App.renderList();

@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
   }
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify(profiles));
-  //res.send(profiles.length);
 });
 
 module.exports = router;
